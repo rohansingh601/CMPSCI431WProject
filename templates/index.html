@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+</head>
+<body>
+    <h1>Welcome to the Library Management System</h1>
+
+    <h2>Menu</h2>
+    <ul>
+        <li><a href="/books/all">View All Books</a></li>
+        <li><a href="/reports/advanced">View Advanced Reports</a></li>
+    </ul>
+
+    <h2>Add a New Book</h2>
+    <form action="/books/add" method="post">
+        <label for="addBookTitle">Title:</label><br>
+        <input type="text" id="addBookTitle" name="title"><br>
+        <label for="addBookPublicationDate">Publication Date:</label><br>
+        <input type="text" id="addBookPublicationDate" name="publicationDate"><br>
+        <label for="addBookPublisherID">Publisher ID:</label><br>
+        <input type="number" id="addBookPublisherID" name="publisherID"><br>
+        <label for="addBookAvailabilityStatus">Availability Status (1 for available, 0 for not available):</label><br>
+        <input type="number" id="addBookAvailabilityStatus" name="availabilityStatus"><br>
+        <input type="submit" value="Add Book">
+    </form>
+
+    <h2>Register a User</h2>
+    <form action="/register_user" method="post">
+        <label for="registerUserName">Name:</label><br>
+        <input type="text" id="registerUserName" name="name"><br>
+        <label for="registerUserContactDetails">Contact Details:</label><br>
+        <input type="text" id="registerUserContactDetails" name="contactDetails"><br>
+        <input type="submit" value="Register">
+    </form>
+
+    <h2>Update User Details</h2>
+    <form action="/update_user" method="post">
+        <label for="userID">User ID:</label><br>
+        <input type="number" id="userID" name="userID" required><br>
+        <label for="updateUserName">User Name:</label><br>
+        <input type="text" id="updateUserName" name="userName" required><br>
+        <label for="updateUserContactDetails">Contact Details:</label><br>
+        <input type="text" id="updateUserContactDetails" name="contactDetails" required><br>
+        <input type="submit" value="Update User">
+    </form>
+
+
+    <h2>Create a Cart for a User</h2>
+    <form action="/create_cart" method="post">
+        <label for="userID">User ID:</label><br>
+        <input type="number" id="userID" name="userID" required><br>
+        <input type="submit" value="Create Cart">
+    </form>
+
+
+    <h2>Add Book to Cart</h2>
+    <form action="/add_to_cart" method="post">
+        <label for="cartID">Cart ID:</label><br>
+        <input type="number" id="cartID" name="cartID" required><br>
+        <label for="bookID">Book ID:</label><br>
+        <input type="number" id="bookID" name="bookID" required><br>
+        <input type="submit" value="Add to Cart">
+    </form>
+
+
+    <h2>Remove Book from Cart</h2>
+    <form action="/remove_from_cart" method="post">
+        <label for="cartID">Cart ID:</label><br>
+        <input type="number" id="cartID" name="cartID" required><br>
+        <label for="bookID">Book ID:</label><br>
+        <input type="number" id="bookID" name="bookID" required><br>
+        <input type="submit" value="Remove from Cart">
+    </form>
+
+
+    <h2>View Cart</h2>
+    <form action="/view_cart" method="get">
+        <label for="cartID">Cart ID:</label><br>
+        <input type="number" id="cartID" name="cartID" required><br>
+        <input type="submit" value="View Cart">
+    </form>
+
+
+    <h2>Checkout</h2>
+    <form action="/checkout" method="post">
+        <label for="checkoutUserName">User Name:</label><br>
+        <input type="text" id="checkoutUserName" name="userName" required><br>
+        <label for="checkoutCartID">Cart ID:</label><br>
+        <input type="number" id="checkoutCartID" name="cartID" required><br>
+        <input type="submit" value="Checkout">
+    </form>
+
+
+</body>
+</html>
